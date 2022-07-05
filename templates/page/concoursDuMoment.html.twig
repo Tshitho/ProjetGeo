@@ -52,7 +52,7 @@
         </div>
         <div class="p-2 bd-highlight telecharger-file mt-5 col">
             <div class="btn-telecharger">
-                {{ form(form)}}
+                <button class="js-show-modal1"> Telecharger</button>
             </div>
             <div class="upload-file">
                 <img src="{{ asset('assets/image/infographie4.jpg')}}" alt="">
@@ -61,9 +61,32 @@
         
     </div>
 
+        {# upload javascript #}
+
+    <div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
+            <div class="overlay-modal1 js-hide-modal1"></div>
+    
+            <div class="container">
+                <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+                    <button class="how-pos3 hov3 trans-04 js-hide-modal1">
+                        <img src="{{ asset('assets/image/icons/icon-close.png')}}" alt="CLOSE">
+                    </button>
+    
+                    <div class="row">
+                        <div class="col-md-6 col-lg-7 p-b-30">
+                            {{ form(form)}}
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-    <div class="flex-row bd-highlight mb-3 concours-3">
+        {# fin upload javascript #}
+
+    <div class=" bd-highlight mb-3 concours-3">
         <div class="p-2 bd-highlight mt-5">
             <h1>
                 TU ES VOTANT ? <br>
@@ -71,7 +94,39 @@
                 QUE TU PREFERE
             </h1>
         </div>
+        {# <div class="overlay-modal1 js-hide-modal1"></div>
         
+            <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+                <button class="how-pos3 hov3 trans-04 js-hide-modal1">
+                    <img src="images/icons/icon-close.png" alt="CLOSE">
+                </button>
+                {% for concour in concours %}
+                <div class="col-md-6 col-lg-7 p-b-30">
+                    <div class="p-l-25 p-r-30 p-lr-0-lg">
+                        <div class="wrap-slick3 flex-sb flex-w">
+                            <div class=""></div>
+                            <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+                            <div class="slick3 ">
+                                <div class="item-slick3">
+                                    <div class="wrap-pic-w pos-relative concours-3">
+                                       <img src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
+                                      
+                                    </div>
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                
+            </div> #}
+
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -79,20 +134,23 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-            {% for concour in concours %}
+           
                 <div class="carousel-item active">
                     <div class="d-flex">
-                        <div class="infographie1">                           
-                                <img src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
+                        <div class="infographie1 d-flex"> 
+                        
+                        {% for concour in concours %}                          
+                            <img src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
                             <div class="card-body">
                                 <h3 class="card-title pricing-card-title">******</h3>
                                 <h3 class="card-title pricing-card-title">******</h3>
                                 <p>Auteur</p> 
-                            </div>     
+                            </div> 
+                        {% endfor %}
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+          
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -144,5 +202,12 @@
     </div>
     
        
-
+    <!--===============================================================================================-->	
+	    <script src=" {{ asset('assets/vendo/jquery/jquery-3.2.1.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ asset('assets/vendo/animsition/js/animsition.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ asset('assets/js/slick-custom.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ asset('assets/js/main.js')}}"></script>
 {% endblock %}

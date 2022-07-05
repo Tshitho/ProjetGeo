@@ -64,14 +64,13 @@ class PageController extends AbstractController
             return $this->redirectToRoute('app_concours');
 
         }
-
-
         return $this->render('page/concoursDuMoment.html.twig',[
             'form'=> $form->createView(),
             'concours'=> $concours,
 
         ]);
     }
+    
 
     /**
      * @Route("/mentionslegales", name="app_mentionslegales")
