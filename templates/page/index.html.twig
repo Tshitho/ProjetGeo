@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue{% endblock %}
+
+{% block body %}
+    <div class="container-fluid container-accueil-1 row">
+        <div class="contenue-text col">
+            <h1 class="titre-accueil">CONCOURS <br> D'INFOGRAPHIES</h1>
+            <p class="text-accueil-1">
+                Tous les 15 jours, un concours <br>
+                d'infographies est lancé auprès des <br>
+                étudiants des écoles d'informatique de <br>
+                Madagascar. Venez montrer votre talent!                
+            </p>
+            <p class="text-accueil-2">
+                Des prix sont à la clé!
+            </p>
+            <a href="" class="btn  btn-success">Lancez-vous !</a>
+
+        </div>
+        <div class="contenue-image col">
+            <img class="ELEMENT-FOND" src="{{ asset('assets/image/IMAGE_ETUDIANT-FOND.png')}}" alt="">
+        </div>
+    </div>
+
+    <div class="container-fluid container-accueil-2 row">
+        <div class="contenue-text mt-5 col">
+            <h1 class="titre-accueil">MONTREZ <br> VOTRE TALENT</h1>
+            <p class="text-accueil">
+                A partir d'un jeu de données <br>
+                géolocalisées, créez une infographie <br>
+                originale, créative, classique ou hors <br>
+                des sentiers battus. Faîtes parler votre <br>
+                imagination.Vous êtes libres !
+            </p>
+            <img src="{{ asset('assets/image/ELEMENT6-FOND TRANSPARENT.png')}}" alt="">
+            <button class="btn btn-success">Lancez-vous !</button>
+        </div>
+        <div class="contenue-image mt-5 col d-flex">
+            <div class="infographie1">
+                <img src="{{ asset('assets/image/infographie1-removebg-preview.png')}}" alt="">
+            </div>
+            <div class="infographie2 ">
+                <img src="{{ asset('assets/image/infographie3-removebg-preview.png')}}" alt="">
+            </div>
+            <div class="infographie3 ">
+                <img src="{{ asset('assets/image/infographie2-removebg-preview.png')}}" alt="">
+            </div>
+        </div>
+    </div>
+    
+        <div class="container-fluid footer d-flex align-items-center">
+            <div class="footer-item  justify-content-center">
+                <div>
+                    <a class="nav-link" href="">QUI SOMMES-NOUS?</a>
+                </div>
+                <div>
+                    <a class="nav-link" href="">CONFIDENTIALITE</a>
+                </div>
+                <div class="nav-image">
+                    <img class="carre" src="{{ asset('assets/image/ELEMENT3 FOND TRANSPARENT.png')}}" alt="">
+                </div>
+            </div>
+            <div class="footer-item ">
+                <div>
+                    <a class="nav-link" href="">RÈGLEMENT</a>
+                </div>
+                <div>
+                    <a class="nav-link" href="{{ path('app_mentionslegales')}}">MENTIONS LEGALES</a>
+                </div>
+                <div class="nav-image">
+                    <img class="cercle" src="{{ asset('assets/image/ELEMENT1-FOND TRANSPARENT.png')}}" alt="">
+                </div>
+            </div>
+            <div class="footer-item " >
+                <div>
+                    <a class="nav-link" href="">CONTACT</a>
+                </div>
+                <div>
+                    <a class="nav-link" href="">CONDITIONS GENERALES</a>
+                </div>
+                <div class="nav-image">
+                    <img class="rectangle" src="{{ asset('assets/image/ELEMENT2-FOND TRANSPARENT.png')}}" alt="">
+                </div>
+            </div>
+        </div>
+{% endblock %}

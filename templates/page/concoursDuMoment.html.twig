@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comment ça marche{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row bd-highlight  mt-5 concours-1">
+            <div class=" bd-highlight contenue-text col">
+                <h1>LE CONCOURS <br>DU MOMENT</h1>
+                <p>
+                    Le brief: A l'aide d'une infographie, illustre <br>
+                    le thème suivant:"Comment a évolué le <br> 
+                    paysage des restaurants en France entre <br>
+                    2012 et 2022 ?" Tu dois illustrer cette <br>
+                    infographie en t'appuyant sur le <br>
+                    périmètre de la commune <br>
+                    Des prix sont à la clé ! 
+                </p>
+            </div>
+            <div class=" col d-flex">
+                <div class=" bd-highlight contenue-image">
+                    <img src="{{ asset('assets/image/ELEMENT-DE-CONCOURS.png')}}" alt="">
+                </div>
+                <div class=" bd-highlight telecharger">
+                    <p>Télécharger le fichier de données</p>
+                    <p>Lien vers le géocodeur</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" row bd-highlight mb-3 concours-2">
+        <div class="p-2 bd-highlight mt-5 col">
+            <h1>UPLOAD TON <br>
+                FICHIER DE <br>
+                GEOINFOGRAPHIE <br>
+            </h1>
+            <p>
+                Tu dois être incrit avant d'uploader <br>
+                ton fichier. 
+            </p>
+            <p>
+                Tu n'as pas encore de compte ? <br>
+                Créer un compte
+            </p>
+            <p>
+                Tu veux seulement voter pour la <br>
+                meilleure infographie ? <br>
+                Créer un compte 
+            </p>
+        </div>
+        <div class="p-2 bd-highlight telecharger-file mt-5 col">
+            <div class="btn-telecharger">
+                {{ form(form)}}
+            </div>
+            <div class="upload-file">
+                <img src="{{ asset('assets/image/infographie4.jpg')}}" alt="">
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <div class="flex-row bd-highlight mb-3 concours-3">
+        <div class="p-2 bd-highlight mt-5">
+            <h1>
+                TU ES VOTANT ? <br>
+                VOTE POUR L'INFOGRAPHIE <br>
+                QUE TU PREFERE
+            </h1>
+        </div>
+        
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+            {% for concour in concours %}
+                <div class="carousel-item active">
+                    <div class="d-flex">
+                        <div class="infographie1">                           
+                                <img src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
+                            <div class="card-body">
+                                <h3 class="card-title pricing-card-title">******</h3>
+                                <h3 class="card-title pricing-card-title">******</h3>
+                                <p>Auteur</p> 
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>    
+
+
+
+    <div class="container-fluid footer-2 d-flex align-items-center">
+        <div class="footer-item  justify-content-center">
+            <div>
+                <a class="nav-link" href="">QUI SOMMES-NOUS?</a>
+            </div>
+            <div>
+                <a class="nav-link" href="">CONFIDENTIALITE</a>
+            </div>
+            <div class="nav-image">
+                <img class="carre" src="{{ asset('assets/image/ELEMENT3 FOND TRANSPARENT.png')}}" alt="">
+            </div>
+        </div>
+        <div class="footer-item ">
+            <div>
+                <a class="nav-link" href="">RÈGLEMENT</a>
+            </div>
+            <div>
+                <a class="nav-link" href="{{ path('app_mentionslegales')}}">MENTIONS LEGALES</a>
+            </div>
+            <div class="nav-image">
+                <img class="cercle" src="{{ asset('assets/image/ELEMENT1-FOND TRANSPARENT.png')}}" alt="">
+            </div>
+        </div>
+        <div class="footer-item " >
+            <div>
+                <a class="nav-link" href="">CONTACT</a>
+            </div>
+            <div>
+                <a class="nav-link" href="">CONDITIONS GENERALES</a>
+            </div>
+            <div class="nav-image">
+                <img class="rectangle" src="{{ asset('assets/image/ELEMENT2-FOND TRANSPARENT.png')}}" alt="">
+            </div>
+        </div>
+    </div>
+    
+       
+
+{% endblock %}

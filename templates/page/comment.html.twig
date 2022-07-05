@@ -1,0 +1,189 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comment ça marche{% endblock %}
+
+{% block body %}
+    
+        <div class="row bd-highlight mb-3 comment-1 mt-5">
+            <div class="p-2 bd-highlight col">
+                <h1>COMMENT <span>ç</span>A <br> MARCHE ?</h1>
+                <p>
+                    Tous les 15 jours, un concours <br>
+                    d'infographies est lancé auprès des <br>
+                    étudiants des écoles d'informatique de <br>
+                    Madagascar. Tous les étudiants de ces <br>
+                    école peuvent y participer. chaque <br>
+                    participant devra prouver son affiliation à <br>
+                    l'école à laquelle il appartient.
+                </p>
+                <p>
+                    Le 1er concours débute en juillet 2022
+                </p>
+            </div>
+            <div class="p-2 bd-highlight col">
+                <img src="{{ asset('assets/image/IMAGE_ETUDIANT-FOND.png')}}" alt="">
+            </div>
+        </div>
+    
+
+    
+    <div class="container-fluid container-accueil-2 row">
+        <div class="contenue-text mt-5 col">
+            <h1 class="titre-accueil">MONTREZ <br> VOTRE TALENT</h1>
+            <p class="text-accueil">
+                A partir d'un jeu de données <br>
+                géolocalisées qui est fourni aux <br>
+                participants, ceux-ci devront réaliser 1 <br>
+                seuel infographie originale, créative, <br>
+                hors des sentiers battus ou tout <br>
+                simplement classique. chacun est
+                libre.
+            </p>
+            <img src="{{ asset('assets/image/ELEMENT6-FOND TRANSPARENT.png')}}" alt="">
+        </div>
+        <div class="contenue-image mt-5 col d-flex">
+            <div class="infographie1">
+                <img src="{{ asset('assets/image/infographie1-removebg-preview.png')}}" alt="">
+            </div>
+            <div class="infographie2 ">
+                <img src="{{ asset('assets/image/infographie3-removebg-preview.png')}}" alt="">
+            </div>
+            <div class="infographie3 ">
+                <img src="{{ asset('assets/image/infographie2-removebg-preview.png')}}" alt="">
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="row bd-highlight mb-3 comment-3">
+        <div class="p-2 bd-highlight col">
+            <h1>COMMENT FAIRE ?</h1>
+            <p>
+                3 élément sont fournis à chaque <br>
+                participant:   
+
+                <ul>
+                    <li>
+                        une brief qui reprend le sujet de <br>
+                        l'infographie à créer
+                    </li>
+                    <li>
+                        un lien vers un jeu de données à <br>
+                        télecharger
+                    </li>
+                    <li>    
+                        un lien vers une site de géocodage
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Ces éléments sont disponibles dans la <br>
+                section "le concours du moment" dès <br>
+                le début du concours. Chaque <br>
+                concours a une durée de vie de 15 <br>
+                jours. Un nouveau concours sera lancé <br>
+                à l'issue du précédent.
+            </p>
+        </div>
+        <div class="p-2 bd-highlight col">
+            <img src="{{ asset('assets/image/géocodage fond transparent.png')}}" alt="">
+        </div>
+    </div>
+
+    <div class="row bd-highlight mb-3 comment-4">
+        <div class="p-2 bd-highlight col">
+            <h1>COMMENT PARTICIPER ?</h1>
+            <p>
+                Rien de plus simple. Rendez-vous <br>
+                dans la section "Connexion" et créer <br>
+                un compte participant en entrant vos <br>
+                coordonnées.Dès lors, vous pourrrez <br>
+                participer au concours. <br>
+            </p>
+            <p>
+                En tant que participant, vous ne <br>
+                pouvez pas voter pour l'infographie <br>
+                que vous préférez. Vous ne pouvez <br>
+                créer qu'une seule infographie mais <br>
+                vous pouvez cependant remplacer la <br>
+                précédente si vous le désirez. Vous <br>
+                perdrez cependant votre notation <br>
+                précédente.
+            </p>
+        </div>
+        <div class="p-2 bd-highlight col">
+            <img src="{{ asset('assets/image/IMAGE LOGIN FOND TRANSPARENT.png')}}" alt="">            
+            <p>
+                En vous connectant en tant que participant et <br>
+                en vous rendant dans la section "le concours du <br>
+                moment", vous pourrez uploader votre <br>
+                infographie en formats image et PDF 
+            </p>
+            <button class="btn btn-success">Lancez-vous !</button>
+            
+        </div>
+    </div>
+
+    <div class="row bd-highlight mb-3 comment-5">
+        <div class="p-2 bd-highlight col">
+            <h1>COMMENT VOTER POUR <br>
+                VOTRE INFOGRAPHIE <br>
+                PREFEREE ?</h1>
+            <p>
+               Rien de plus simple. Rendez-vous <br>
+               dans le section "Connexion" et créez <br>
+               un compte votant en entrant vos <br>
+               coordonnées. Dès lors, vous pourrez <br>
+               visualiser les infographies et voter en <br>
+               cliquant sur les étoiles de 1 à 10.
+            </p>
+            <p>
+               En tant que votant, vous ne pouvez <br>
+               voter que pour une seule infographie.
+            </p>
+        </div>
+        <div class="p-2 bd-highlight col">
+            <div>
+                <img src="{{ asset('assets/image/IMAGE LOGIN FOND TRANSPARENT.png')}}" alt="">            
+            </div>
+            <button class="btn btn-success">Votez !</button>
+            
+        </div>
+    </div>
+
+    <div class="container-fluid footer-2 row align-items-center">
+        <div class="footer-item  justify-content-center col">
+            <div>
+                <a class="nav-link" href="">QUI SOMMES-NOUS?</a>
+            </div>
+            <div>
+                <a class="nav-link" href="">CONFIDENTIALITE</a>
+            </div>
+            <div class="nav-image">
+                <img class="carre" src="{{ asset('assets/image/ELEMENT3 FOND TRANSPARENT.png')}}" alt="">
+            </div>
+        </div>
+        <div class="footer-item col">
+            <div>
+                <a class="nav-link" href="">RÈGLEMENT</a>
+            </div>
+            <div>
+                <a class="nav-link" href="{{ path('app_mentionslegales')}}">MENTIONS LEGALES</a>
+            </div>
+            <div class="nav-image">
+                <img class="cercle" src="{{ asset('assets/image/ELEMENT1-FOND TRANSPARENT.png')}}" alt="">
+            </div>
+        </div>
+        <div class="footer-item col" >
+            <div>
+                <a class="nav-link" href="">CONTACT</a>
+            </div>
+            <div>
+                <a class="nav-link" href="">CONDITIONS GENERALES</a>
+            </div>
+            <div class="nav-image">
+                <img class="rectangle" src="{{ asset('assets/image/ELEMENT2-FOND TRANSPARENT.png')}}" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}
