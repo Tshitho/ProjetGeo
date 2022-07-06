@@ -94,79 +94,26 @@
                 QUE TU PREFERE
             </h1>
         </div>
-        {# <div class="overlay-modal1 js-hide-modal1"></div>
-        
-            <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-                <button class="how-pos3 hov3 trans-04 js-hide-modal1">
-                    <img src="images/icons/icon-close.png" alt="CLOSE">
-                </button>
-                {% for concour in concours %}
-                <div class="col-md-6 col-lg-7 p-b-30">
-                    <div class="p-l-25 p-r-30 p-lr-0-lg">
-                        <div class="wrap-slick3 flex-sb flex-w">
-                            <div class=""></div>
-                            <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+       
 
-                            <div class="slick3 ">
-                                <div class="item-slick3">
-                                    <div class="wrap-pic-w pos-relative concours-3">
-                                       <img src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
-                                      
-                                    </div>
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>   
-                            </div>
-                        </div>
-                    </div>
+       
+        <div class="owl-carousel owl-theme ">
+            
+            {% for concour in concours %}
+                <div class="item concours-3">
+                    <img width="260" height="500" src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
+                    <p>******</p>
                 </div>
-                {% endfor %}
-
-                
-            </div> #}
-
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-           
-                <div class="carousel-item active">
-                    <div class="d-flex">
-                        <div class="infographie1 d-flex"> 
-                        
-                        {% for concour in concours %}                          
-                            <img src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
-                            <div class="card-body">
-                                <h3 class="card-title pricing-card-title">******</h3>
-                                <h3 class="card-title pricing-card-title">******</h3>
-                                <p>Auteur</p> 
-                            </div> 
-                        {% endfor %}
-                        </div>
-                    </div>
-                </div>
-          
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+             {% endfor %}
+             
         </div>
-    </div>    
+       
+    </div>     
 
 
 
-    <div class="container-fluid footer-2 d-flex align-items-center">
-        <div class="footer-item  justify-content-center">
+    <div class="container-fluid footer-2 row align-items-center">
+        <div class="footer-item  justify-content-center col">
             <div>
                 <a class="nav-link" href="">QUI SOMMES-NOUS?</a>
             </div>
@@ -177,7 +124,7 @@
                 <img class="carre" src="{{ asset('assets/image/ELEMENT3 FOND TRANSPARENT.png')}}" alt="">
             </div>
         </div>
-        <div class="footer-item ">
+        <div class="footer-item col">
             <div>
                 <a class="nav-link" href="">RÈGLEMENT</a>
             </div>
@@ -188,7 +135,7 @@
                 <img class="cercle" src="{{ asset('assets/image/ELEMENT1-FOND TRANSPARENT.png')}}" alt="">
             </div>
         </div>
-        <div class="footer-item " >
+        <div class="footer-item col" >
             <div>
                 <a class="nav-link" href="">CONTACT</a>
             </div>
@@ -202,6 +149,7 @@
     </div>
     
        
+        
     <!--===============================================================================================-->	
 	    <script src=" {{ asset('assets/vendo/jquery/jquery-3.2.1.min.js')}}"></script>
     <!--===============================================================================================-->
@@ -210,4 +158,32 @@
         <script src="{{ asset('assets/js/slick-custom.js')}}"></script>
     <!--===============================================================================================-->
         <script src="{{ asset('assets/js/main.js')}}"></script>
+        <script src="{{ asset('assets/js/owl.carousel.min.js')}}"></script>
+
+        <script >
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:30,
+                responsiveClass:true,
+                responsive:{
+                    760:{
+                        items:1,
+                        nav:true
+                    },
+                    960:{
+                        items:3,
+                        nav:true,
+                    },
+                    1140:{
+                        items:5,
+                        nav:true,
+                    }
+
+                }
+            });
+        });
+
+        </script>
+        
 {% endblock %}

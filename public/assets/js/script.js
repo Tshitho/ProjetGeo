@@ -1,12 +1,6 @@
-
-window.onload=function(){
-  var bouton = document.getElementById('btnMenu');
-  var nav = document.getElementById('navbarSupportedContent');
-  bouton.onclick = function(e){
-      if(nav.style.display=="block"){
-          nav.style.display="none";
-      }else{
-          nav.style.display="block";
-      }
-  };
-};
+(function ($) {
+    $('.owl-carousel').owlCarousel({
+        items:3,
+        margin:30,
+    });
+});
