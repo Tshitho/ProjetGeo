@@ -22,6 +22,23 @@ class Concour
      */
     private $uplaod;
 
+    /**
+     * @ORM\Column(type="datetime_immutable")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime_immutable")
+     */
+    private $uydatedAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+        $this->uydatedAt = new \DateTimeImmutable();
+        
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +52,30 @@ class Concour
     public function setUplaod(string $uplaod): self
     {
         $this->uplaod = $uplaod;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUydatedAt(): ?\DateTimeImmutable
+    {
+        return $this->uydatedAt;
+    }
+
+    public function setUydatedAt(\DateTimeImmutable $uydatedAt): self
+    {
+        $this->uydatedAt = $uydatedAt;
 
         return $this;
     }

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Concour;
 use App\Form\ConcourType;
+use App\Repository\ConcourRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -56,7 +57,6 @@ class PageController extends AbstractController
                 $newFilename
             );
             $concour->setUplaod($newFilename);
-
             
             $entityManager->persist($concour);
             $entityManager->flush();
@@ -70,7 +70,36 @@ class PageController extends AbstractController
 
         ]);
     }
+
+    /**
+     * @Route("/delete/{id}", name="app_delete")
+     */
+    public function Delete(Concour $concour): Response
+    {
+
+        $images = $concour->getUplaod();
     
+        
+        if($images){
+	        foreach($concour as $concours){
+            $destination = $this->getParameter('brochures_directory');
+            
+                if(file_exists($destination)){
+                    unlink( $destination);
+                }  
+            }
+        }
+
+        
+        $em = $this->getDoctrine()->getManager();
+        $concour = $em->getRepository(Concour::class)->find($concour);
+
+        $em->remove($concour);
+        $em->flush();
+
+        return $this->redirectToRoute('app_concours');
+    }
+
 
     /**
      * @Route("/mentionslegales", name="app_mentionslegales")

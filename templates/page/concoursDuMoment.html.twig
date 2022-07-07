@@ -72,10 +72,11 @@
                         <img src="{{ asset('assets/image/icons/icon-close.png')}}" alt="CLOSE">
                     </button>
     
-                    <div class="row">
-                        <div class="col-md-6 col-lg-7 p-b-30">
+                    <div class="d-flex justify-content-center">
+                        <div class="mb-3">
                             {{ form(form)}}
                         </div>
+                        
                         
                         
                     </div>
@@ -100,17 +101,50 @@
         <div class="owl-carousel owl-theme ">
             
             {% for concour in concours %}
-                <div class="item concours-3">
-                    <img width="260" height="500" src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
-                    <p>******</p>
+                <div class="item concours-3 justify-content-center">
+                    <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
+                        <img width="260" height="500" src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
+                    </a> 
+                    <div class="rating ">
+                        <a href="#10" title="Give 10 stars">☆</a>
+                        <a href="#9" title="Give 9 stars">☆</a>
+                        <a href="#8" title="Give 8 stars">☆</a>
+                        <a href="#7" title="Give 7 stars">☆</a>
+                        <a href="#6" title="Give 6 star">☆</a> 
+                        <a href="#5" title="Give 5 stars">☆</a>
+                        <a href="#4" title="Give 4 stars">☆</a>
+                        <a href="#3" title="Give 3 stars">☆</a>
+                        <a href="#2" title="Give 2 stars">☆</a>
+                        <a href="#1" title="Give 1 star">☆</a> 
+                        
+                    </div>
                 </div>
              {% endfor %}
              
         </div>
        
     </div>     
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+   
+            {% for concour in concours %}
+            
+            <div class="modal-body mx-auto">
+                <img width="260" height="500" src="{{ asset('uploads/')}}{{ concour.uplaod }}" alt="image">
+            </div>
+            
+            {% endfor %}
+    
 
-
+        
+          
+        </div>
+      </div>
+    </div>
 
     <div class="container-fluid footer-2 row align-items-center">
         <div class="footer-item  justify-content-center col">
@@ -163,7 +197,7 @@
         <script >
         $(document).ready(function(){
             $('.owl-carousel').owlCarousel({
-                loop:true,
+                loop:false,
                 margin:30,
                 responsiveClass:true,
                 responsive:{

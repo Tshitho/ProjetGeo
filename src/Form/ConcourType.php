@@ -15,10 +15,14 @@ class ConcourType extends AbstractType
     {
         $builder
             ->add('uplaod',FileType::class, [
+                'label' => 'Votre Ficher',
+                'attr'=>['class' => 'form-control'],
                 'required' => false,
                 'mapped' => false
             ])
-            ->add('Telecharger', SubmitType::class)
+            ->add('Telecharger', SubmitType::class, [
+                'attr'=>['class' => 'btn btn-success'],
+            ])
         ;
     }
 
